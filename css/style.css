@@ -64,6 +64,7 @@ h1 {
   font-size: clamp(2rem, 7vw, 3.25rem);
   line-height: .98;
   letter-spacing: -.04em;
+  color: red;
 }
 
 .subtitle {
