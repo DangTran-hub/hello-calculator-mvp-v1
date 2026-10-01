@@ -24,10 +24,16 @@
       <p>Nhấn phím và theo dõi chuỗi <strong>Event → State → Render → DOM</strong> ở bảng Developer / Learning bên dưới.</p>
     </section>
 
-    <section class="calculator-card" aria-label="Máy tính cơ bản">
+    <section class="calculator-card" aria-label="Máy tính khoa học">
       <div class="calculator-title-row">
         <h2>Calculator</h2>
-        <span id="status-badge" class="status-badge" aria-hidden="true">Ready</span>
+        <div class="calculator-controls">
+          <div class="angle-toggle" role="group" aria-label="Chế độ góc">
+            <button class="mode-button is-selected" type="button" data-action="angle-mode" data-value="DEG" aria-pressed="true">DEG</button>
+            <button class="mode-button" type="button" data-action="angle-mode" data-value="RAD" aria-pressed="false">RAD</button>
+          </div>
+          <span id="status-badge" class="status-badge" aria-live="polite">Ready</span>
+        </div>
       </div>
 
       <div class="display-panel" aria-label="Màn hình calculator">
@@ -36,28 +42,47 @@
       </div>
 
       <div id="keypad" class="keypad" aria-label="Bàn phím calculator">
-        <button class="key key-control" type="button" data-action="clear" aria-label="Xóa toàn bộ">C</button>
-        <button class="key key-control" type="button" data-action="backspace" aria-label="Xóa ký tự cuối">⌫</button>
-        <button class="key key-operator" type="button" data-action="operator" data-value="/" aria-label="Chia">÷</button>
-        <button class="key key-operator" type="button" data-action="operator" data-value="*" aria-label="Nhân">×</button>
+        <div class="scientific-keypad" aria-label="Các hàm khoa học">
+          <button class="key key-scientific" type="button" data-action="function" data-value="sin">sin</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="cos">cos</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="tan">tan</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="asin">asin</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="acos">acos</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="atan">atan</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="sinh">sinh</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="cosh">cosh</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="sqrt">√x</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="ln">ln</button>
+          <button class="key key-scientific" type="button" data-action="function" data-value="log">log</button>
+          <button class="key key-constant" type="button" data-action="constant" data-value="pi" aria-label="Pi">π</button>
+          <button class="key key-constant" type="button" data-action="constant" data-value="e" aria-label="Euler">e</button>
+          <button class="key key-scientific" type="button" data-action="square" aria-label="Bình phương">x²</button>
+          <button class="key key-scientific" type="button" data-action="operator" data-value="^" aria-label="Lũy thừa">xʸ</button>
+          <button class="key key-scientific" type="button" data-action="reciprocal" aria-label="Nghịch đảo">1/x</button>
+          <button class="key key-scientific" type="button" data-action="parenthesis" data-value="(" aria-label="Ngoặc trái">(</button>
+          <button class="key key-scientific" type="button" data-action="parenthesis" data-value=")" aria-label="Ngoặc phải">)</button>
+        </div>
 
-        <button class="key key-number" type="button" data-action="number" data-value="7">7</button>
-        <button class="key key-number" type="button" data-action="number" data-value="8">8</button>
-        <button class="key key-number" type="button" data-action="number" data-value="9">9</button>
-        <button class="key key-operator" type="button" data-action="operator" data-value="-" aria-label="Trừ">−</button>
-
-        <button class="key key-number" type="button" data-action="number" data-value="4">4</button>
-        <button class="key key-number" type="button" data-action="number" data-value="5">5</button>
-        <button class="key key-number" type="button" data-action="number" data-value="6">6</button>
-        <button class="key key-operator" type="button" data-action="operator" data-value="+" aria-label="Cộng">+</button>
-
-        <button class="key key-number" type="button" data-action="number" data-value="1">1</button>
-        <button class="key key-number" type="button" data-action="number" data-value="2">2</button>
-        <button class="key key-number" type="button" data-action="number" data-value="3">3</button>
-        <button class="key key-equal" type="button" data-action="equals" aria-label="Tính kết quả">=</button>
-
-        <button class="key key-number key-zero" type="button" data-action="number" data-value="0">0</button>
-        <button class="key key-number" type="button" data-action="decimal" data-value=".">.</button>
+        <div class="basic-keypad" aria-label="Các phép tính cơ bản">
+          <button class="key key-control" type="button" data-action="clear" aria-label="Xóa toàn bộ">AC</button>
+          <button class="key key-control" type="button" data-action="backspace" aria-label="Xóa ký tự cuối">DEL</button>
+          <button class="key key-operator" type="button" data-action="operator" data-value="/" aria-label="Chia">÷</button>
+          <button class="key key-operator" type="button" data-action="operator" data-value="*" aria-label="Nhân">×</button>
+          <button class="key key-number" type="button" data-action="number" data-value="7">7</button>
+          <button class="key key-number" type="button" data-action="number" data-value="8">8</button>
+          <button class="key key-number" type="button" data-action="number" data-value="9">9</button>
+          <button class="key key-operator" type="button" data-action="operator" data-value="-" aria-label="Trừ">−</button>
+          <button class="key key-number" type="button" data-action="number" data-value="4">4</button>
+          <button class="key key-number" type="button" data-action="number" data-value="5">5</button>
+          <button class="key key-number" type="button" data-action="number" data-value="6">6</button>
+          <button class="key key-operator" type="button" data-action="operator" data-value="+" aria-label="Cộng">+</button>
+          <button class="key key-number" type="button" data-action="number" data-value="1">1</button>
+          <button class="key key-number" type="button" data-action="number" data-value="2">2</button>
+          <button class="key key-number" type="button" data-action="number" data-value="3">3</button>
+          <button class="key key-equal" type="button" data-action="equals" aria-label="Tính kết quả">=</button>
+          <button class="key key-number key-zero" type="button" data-action="number" data-value="0">0</button>
+          <button class="key key-number" type="button" data-action="decimal" data-value=".">.</button>
+        </div>
       </div>
 
       <p class="keyboard-hint"><strong>Mẹo:</strong> Có thể dùng bàn phím: 0–9, +, -, *, /, Enter, Backspace, Escape.</p>
@@ -68,10 +93,10 @@
       <div class="state-grid" aria-live="polite">
         <div class="state-label">Event</div><output id="state-event">init</output>
         <div class="state-label">Value</div><output id="state-value">—</output>
+        <div class="state-label">expression</div><output id="state-expression">""</output>
         <div class="state-label">currentInput</div><output id="state-current-input">"0"</output>
-        <div class="state-label">firstOperand</div><output id="state-first-operand">null</output>
-        <div class="state-label">operator</div><output id="state-operator">null</output>
-        <div class="state-label">waitingForOperand</div><output id="state-waiting">false</output>
+        <div class="state-label">angleMode</div><output id="state-angle-mode">"DEG"</output>
+        <div class="state-label">errorMessage</div><output id="state-error-message">""</output>
       </div>
       <p class="panel-note">Bảng này chỉ để phục vụ giảng dạy. Nó cho thấy trạng thái JavaScript thay đổi sau mỗi thao tác.</p>
     </details>
